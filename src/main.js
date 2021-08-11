@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const path = require("path");
 const cookieParser = require("cookie-parser")
+const port=process.env.PORT || 8000
 require("./conect")
 const app = express()
 app.use(express.json())
@@ -101,6 +102,7 @@ app.post("/update", async (req, res, next) => {
                 let data = await students.findOne({ email: req.body.email });     
                 const bcryptpassword = await bcrypt.compare(req.body.password, data.Password);
                 console.log(bcryptpassword + "jjjj");
+                //halka
                 data = await students.updateOne({ email: req.body.email }, {
                         $set: {
                                 "FirstName": req.body.firstname,
@@ -131,7 +133,7 @@ app.get("/signout",async(req,res)=>{
            res.sendFile(path.join(__dirname,"../public/login.html"))
         
 })
-app.listen(3000, () => {
-        console.log("Server start at: " + "http://localhost:3000/")
+app.listen(port, () => {
+        console.log("Server start at: " + "http://localhost:"+port+"/")
 
 })
