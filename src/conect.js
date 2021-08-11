@@ -1,5 +1,9 @@
+//const db='mongodb+srv://ravi:Computer@123@cluster0.aavpk.mongodb.net/meanstack?retryWrites=true&w=majority'
+//require('dotenv').config()
+
 const mongoose=require('mongoose')
-mongoose.connect("mongodb://localhost:27017/hisar",{useUnifiedTopology: true, useNewUrlParser: true}).then(()=>{
+console.log()
+mongoose.connect(process.env.DB,{useUnifiedTopology: true, useNewUrlParser: true}).then(()=>{
     console.log("sucessfull")
 }).catch(()=>{
     console.log("unsucessfull")
