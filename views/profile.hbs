@@ -15,47 +15,32 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg   navbar-primary bg-primary" style="height:61px">
-        <div class="container ">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary " style="height:61px">
+        <div class="container">
+            <a class="navbar-brand fs-3 text" href="#"><b>Google</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand text-light fs-3 text " href="#"><b>Google</b></a>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item ">
-                        <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active " aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Link</a>
+                        <a class="nav-link text-light " href="#">Link</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link text-light  " href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-                <form class="d-flex  mt-3">
+                <form class="d-flex mt-3">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light text-light" type="submit">Search</button>
+                    <button class="btn btn-outline-light" type="submit">Search</button>
                 </form>
+
                 <ul class="nav navbar-nav navbar-right">
-
-                    {{!-- <li class="nav-item dropdown fs-4 text">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                            aria-expanded="false">
-
-                            <i class=" me-2 fas fa-sign-out-alt text-light  me-3">{{firstname}}</i>
-                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-
-                            </ul>
-                        </a>
-                    </li> --}}
                     <li class="nav-item dropdown fs-4 text">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,11 +56,10 @@
                         </ul>
                     </li>
                 </ul>
-
-
             </div>
         </div>
     </nav>
+
     <div class="page-content page-container " id="page-content">
         <div class="padding">
             <div class="row container-fluid d-flex justify-content-center">
@@ -94,7 +78,7 @@
                                 <img src="https://img.icons8.com/bubbles/200/000000/user.png" class="img-radius"
                                     alt="User-Profile-Image" />
                             </div>
-                            <h4="f-w-600 ">{{firstname}} {{lastname}}</h4>
+                            <h4="f-w-600  ">{{firstname}} {{lastname}}</h4>
                                     <p>{{email}}</p>
                                     <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                         </div>
@@ -102,8 +86,8 @@
 
                     <div class="col-sm-8">
                         <div class="card-block " style="padding: 60px 0">
-                            
-                            <b class="p-5">Profile Info</b>
+
+                            <b class=" fs-4 p-3">Profile Info</b>
                             <form role="form" action="/update" method="POST">
                                 <div class="row p-3 mt-2">
                                     <div class="col-xs-6 col-sm-6 col-md-6">
@@ -152,16 +136,61 @@
                                     </div>
                                 </div>
 
-                                <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                                <div class="form-group p-3">
+                                    <label class="form-label" for="university">COLLEGE NAME</label>
+                                    <input type="text" name="college" id="university" class="form-control input-sm"
+                                        placeholder="College Name" value={{college}} />
+                                </div>
+
+                                <div class=" form-group p-3 accordion" id="accordionFlushExample">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="flush-headingOne">
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
                                                 aria-expanded="false" aria-controls="flush-collapseOne">
-                                                Change Password
+                                                CHANGE SECURITY KEY
                                             </button>
                                         </h2>
                                         <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="form-group p-3">
+
+                                                    <select name="Securitykey" class="form-control">
+                                                        <option class="hidden" selected disabled>Please select
+                                                            your Sequrity Question</option>
+                                                        <option value="What is your Birthdate?">What is your
+                                                            Birthdate?</option>
+                                                        <option value="What is Your old Phone Number">What is
+                                                            Your old Phone Number</option>
+                                                        <option value="What is your Pet Name?">What is your
+                                                            Pet Name?</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group p-3">
+                                                    <label class="form-label" for="answer">ANSWER</label>
+                                                    <input type="text" name="answer" id="answer"
+                                                        class="form-control input-sm" placeholder="Email Address" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class=" form-group p-3 accordion" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingOne">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapsetwo"
+                                                aria-expanded="false" aria-controls="flush-collapsetwo">
+                                                CHANGE PASSWORD
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapsetwo" class="accordion-collapse collapse"
                                             aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                             <div class="accordion-body">
                                                 <div class="row p-3">
@@ -188,25 +217,6 @@
 
 
                                     </div>
-                                </div>
-                              
-                                <div class="form-group p-3">
-
-                                    <select name="Securitykey" class="form-control">
-                                        <option class="hidden" selected disabled>Please select
-                                            your Sequrity Question</option>
-                                        <option value="What is your Birthdate?">What is your
-                                            Birthdate?</option>
-                                        <option value="What is Your old Phone Number">What is
-                                            Your old Phone Number</option>
-                                        <option value="What is your Pet Name?">What is your
-                                            Pet Name?</option>
-                                    </select>
-                                </div>
-                                <div class="form-group p-3">
-                                    <label class="form-label" for="answer">ANSWER</label>
-                                    <input type="number" name="answer" id="answer" class="form-control input-sm"
-                                        placeholder="Email Address" />
                                 </div>
                                 <div class="row p-3">
                                     <input type="submit" value="Update" class="btn btn-info btn-lg input-sm" />
